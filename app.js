@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-// Heroku dynamically sets a portadasdaadasdddd
+// Heroku dynamically sets a portadasdaadasddddasdasdasd
 const PORT = process.env.PORT || 5000;
 
 app.use(express.static("dist"));
