@@ -79,7 +79,7 @@ describe('<PokemonPage />', () => {
   })
 
   it('should render abilities', async () => {
-    axiosMock.get.mockResolvedValueOnce({ data: pokemonList })
+    axiosMock.get.mockResolvedValueOnce({ data: pokemonList }) // ottaa pokemon listan
 
     await act(async () => {
       render(
@@ -108,7 +108,7 @@ describe('<PokemonPage />', () => {
   })
 
   it('should render previous and next urls if they exist', async () => {
-    axiosMock.get.mockResolvedValueOnce({ data: pokemonList })
+    axiosMock.get.mockResolvedValueOnce({ data: pokemonList })  // ottaa pokemon lista jossa 133
 
     await act(async () => {
       render(
