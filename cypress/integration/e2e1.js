@@ -21,6 +21,6 @@ describe('Pokedex', function() {
     cy.contains('save').click()      
     cy.contains('uusi blogi')
   })  
-
+ssd
 
  */
