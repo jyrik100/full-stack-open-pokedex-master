@@ -1,7 +1,11 @@
 name: Cypress test
 on:
-  [push]
-
+  push:
+    branches:
+      - master
+  pull_request:    
+    branches: [master]    
+    types: [opened, synchronize]
 jobs:
  cypress-run:
   runs-on: ubuntu-latest
