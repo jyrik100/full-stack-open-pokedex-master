@@ -17,5 +17,6 @@ jobs:
      with: 
           start: npm start 
    - name: deploy to heroku
+     if: ${{ github.event_name == 'push' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
     
