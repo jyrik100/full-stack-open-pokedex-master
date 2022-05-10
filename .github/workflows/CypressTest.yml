@@ -19,12 +19,9 @@ jobs:
    - name: deploy to heroku
      if: ${{ github.event_name == 'pUUsh' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
- tag_release:
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Bump version and push tag
-        if: ${{ github.event_name == 'push' }}
-        uses: anothrNick/github-tag-action@1.39.0
-        env:
-         repo-token: ${{ secrets.GITHUB_TOKEN }}
+   - name: Bump version and push tag
+     if: ${{ github.event_name == 'push' }}
+     uses: anothrNick/github-tag-action@1.39.0
+     env:
+       repo-token: ${{ secrets.GITHUB_TOKEN }}
        
