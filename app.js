@@ -8,6 +8,6 @@ app.use(express.static('dist'))
 app.listen(PORT, () => {
   //console.log('server started on port 5000')///qqaasdaöAASASASlasdas
   // these are the changed on EditTheApplicationBarchd
-  // ADD THSE CHANGES TO BRACHssöjaösdjöalksd new brach addition NEW Rantsi1
+  // ADD THSE CHANGES TO BRACHssöjaösdjöalksd janne
 })
 
