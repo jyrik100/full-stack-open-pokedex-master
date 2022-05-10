@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@master
+        uses: anothrNick/github-tag-action@1.39.0
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       
+         repo:  jyrik100/full-stack-open-pokedex-master 
        
