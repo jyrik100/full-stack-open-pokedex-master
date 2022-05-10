@@ -19,4 +19,14 @@ jobs:
    - name: deploy to heroku
      if: ${{ github.event_name == 'push' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
-    
+ tag_release:
+    needs: [cypress-run]
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Bump version and push tag
+        if: ${{ github.event_name == 'push' }}
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       
+       
