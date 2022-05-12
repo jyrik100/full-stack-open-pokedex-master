@@ -17,7 +17,7 @@ jobs:
      with: 
           start: npm start 
    - name: deploy to heroku
-     if: ${{ github.event_name == 'pUUsh' }}
+     if: ${{ github.event_name == 'pUsh' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
    - name: Bump version and push tag
      if: ${{ github.event_name == 'push' }}
