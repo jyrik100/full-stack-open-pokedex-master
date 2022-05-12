@@ -22,5 +22,5 @@ jobs:
    - name: Bump version and push tag
      if: ${{ github.event_name == 'push' }}
      uses: anothrNick/github-tag-action@1.39.0
-      with:
+     with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"       
