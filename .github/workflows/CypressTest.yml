@@ -22,6 +22,7 @@ jobs:
      if: ${{ github.event_name == 'puussh' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
  versioning:
+  needs: [cypress-run]
   runs-on: ubuntu-latest
   steps: 
    - name: Bump version and push tag
