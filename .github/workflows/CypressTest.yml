@@ -21,7 +21,9 @@ jobs:
    - name: deploy to heroku
      if: ${{ github.event_name == 'puussh' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
-
+ versioning:
+  runs-on: ubuntu-latest
+  steps: 
    - name: Bump version and push tag
      uses: anothrNick/github-tag-action@1.36.0
      env:
