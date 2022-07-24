@@ -12,11 +12,27 @@ jobs:
   steps: 
    - name: Checkout
      uses: actions/checkout@v2.3.4
+     
    - name: Cypress.io
+     if: ${{ github.event_name == 'puussh' }}
      uses: cypress-io/github-action@v2.9.7
      with: 
           start: npm start 
    - name: deploy to heroku
-     if: ${{ github.event_name == 'push' }}
+     if: ${{ github.event_name == 'puussh' }}
      uses: AkhileshNS/heroku-deploy@v3.12.12
-    
+ versioning:
+  needs: [cypress-run]
+  runs-on: ubuntu-latest
+  steps: 
+   - name: Checkout
+     uses: actions/checkout@v2.3.4
+
+   - name: Bump version and push tag
+     if: "!contains(github.event.head_commit.message, '#skip')"
+     uses: anothrNick/github-tag-action@1.36.0
+     env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       WITH_V: true
+       DEFAULT_BUMP: patch
+       run: echo "version updatedd"
